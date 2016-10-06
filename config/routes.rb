@@ -1,7 +1,19 @@
 Rails.application.routes.draw do
-  devise_for :users
+  resources :profiles do
+    resources :reservations
+  end
+  devise_for :users, :path_prefix => 'd'
+  resources :users
+
   
-  root 'startpage#index'
+  match '/users', to: 'users#index', via: 'get' #show list of user for admin
+  match '/users/:id', to: 'users#show', via: 'get' #allows to view your own account
+  
+  get '/checkprofile' => 'profiles#checkprofile' #route to checkprofile method
+  
+  #functionality to allow users' view. For admin. 
+
+  root 'startpage#index' #root page
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -15,7 +15,8 @@
  */
 
 body {
-    background: image-url("backgr.jpg") no-repeat center center fixed;
+    /*background: image-url("backgr.jpg") no-repeat center center fixed; */
+    background-color: black;
     -moz-background-size:cover; 
     -webkit-background-size:cover; 
     background-size:cover;
@@ -68,7 +69,7 @@ body {
 
 #name {
     position: absolute;
-    top: 5px;
+    top: 55px;
     right: 10px;
 }
 
